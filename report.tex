@@ -1,0 +1,148 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%                                                             %
+%    *     *     *    * * * *  *       *  *     *  *          %
+%    * *   *    * *       *    * *   * *  *     *  *          %
+%    *  *  *   *   *     *     *  * *  *  *     *  *          %
+%    *   * *  * * * *   *      *   *   *  *     *  *          %
+%    *    **  *     *  *       *       *  *     *  *          %
+%    *     *  *     * * * * *  *       *    * *    * * * *    %
+%                                                             %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+%-------Document properties------------
+\documentclass[12pt,a4paper,notitlepage]{report}
+
+%------- Package including -----------
+
+\usepackage[english]{babel}
+\usepackage{amsmath} % For mathmetical equation
+\usepackage{graphicx} % For including image
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry} % For setting margin of paper
+\usepackage{parskip} % For removing indentation
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{titlesec} % Allow title customization
+\usepackage{natbib} % Allow referencing
+\usepackage{titling} % Allow title section customization
+\usepackage[nottoc]{tocbibind} % Add bibliography in the table of contents
+
+%------------------------------------
+
+%---------- Title Part -------------
+\title{1}
+\author{Your Name}
+\date{\today} % for removing keep empty
+%----------------------------------
+
+%--------- Title Customization ------------
+
+% titlesec package is prerequisite
+\titlespacing{\section}{0pt}{0pt}{0pt} % {indentation}{before}{after}
+
+%------------------------------------------
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+%-----------------------------------------------------
+%                Page Style
+%----------------------------------------------------
+\pagestyle{plain}
+\fancyhf{}
+\rhead{}
+\cfoot{\thepage}
+\singlespacing
+%\doublespacing
+%\onehalfspacing
+%\setlength{\parindent}{5mm}
+\setlength{\parskip}{3mm} % Space between two paragraph
+%-----------------------------------------------------
+
+%----------------------------------------------------
+%               Abstract configuration
+%---------------------------------------------------
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{
+    \setlength{\leftmargin}{.5cm}%
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+ %--------------------------------------------------
+
+%%%%%%%%%%%% Begin Document %%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%------------ Title page set up -------------------
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.25]{images/kuetlogosmall}\\[1.0 cm]	% University Logo
+    \begin{center}    \textsc{\Large   Mathematical Sciences}\\[2.0 cm]	\end{center}% University Name
+	  \textsc{\Large Individual Report  }\\[0.5 cm]				% Course Code
+	  \rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	  { \huge \bfseries \thetitle}\\
+	  \rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+    \vspace{3cm}
+	  \begin{minipage}{0.4\textwidth}
+		  \begin{flushleft} \large
+		    \emph{Submitted To:}\\
+		     Name\\ % Your course teacher name
+         Affiliation\\
+         contact info\\
+			\end{flushleft}
+		\end{minipage}~
+	\hfill	
+    \begin{minipage}{0.4\textwidth}
+			\begin{flushleft} \large
+			  \emph{Submitted By :} \\
+			   Name: S.M. Nazmul Haque  \\
+         Roll: 1501034\\
+         Year: 4^{th}\\
+         Term: 2^{nd}
+		  \end{flushleft}
+	  \end{minipage}\\[2 cm]
+	
+	  %\includegraphics[scale = 0.5]{PICMathLogo.png}
+    
+\end{titlepage}
+
+%--------------------------------------------------
+%          Abstract
+%-------------------------------------------------- 
+% notitlepage parameter must be added in documentclass in [] if not pagebreak
+\begin{abstract}
+  How are yor?
+\end{abstract}
+%-------------------------------------------------
+
+%--------------------------------------------------
+% Main Documentation Part Start From Here
+%--------------------------------------------------
+\section*{Introduction}
+I am S.M. Nazmul Haque.
+
+
+%----------- References --------------------------
+
+\renewcommand\bibname{References} % For report documentclass
+%\renewcommand{\refname}{References} % For article documentclass
+\bibliographystyle{apalike}
+\bibliography{} % input your bibtex file location
+% command for citation \citep{}
+
+%------------------------------------------------
+
+\end{document}
